@@ -15,33 +15,29 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var stopAudio: UIButton!
     @IBOutlet weak var recordingInProgress: UILabel!
     
-    var audioRecorder:AVAudioRecorder!
-    var recordedAudio:RecordedAudio!
+    var audioRecorder: AVAudioRecorder!
+    var recordedAudio: RecordedAudio?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func viewWillAppear(animated: Bool) {
-        recordingInProgress.hidden = true
+        recordingInProgress.text = "tap to record"
         stopAudio.hidden = true
         recordAudio.enabled = true
     }
 
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
         if (flag){
-            // TODO: Save the recorded audio
-            recordedAudio = RecordedAudio()
-            recordedAudio.filePathUrl = recorder.url
-            recordedAudio.title = recorder.url.lastPathComponent
+            // Save the recorded audio
+            recordedAudio = RecordedAudio(filePathUrl: recorder.url, title: recorder.url.lastPathComponent!)
             
-            // TODO: Segue
+            // Segue
             self.performSegueWithIdentifier("stopRecording", sender: recordedAudio)
         }
     }
@@ -55,8 +51,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func recordAudio(sender: UIButton) {
-        if recordingInProgress.hidden == true {
-            recordingInProgress.hidden = false
+        if recordingInProgress.text == "tap to record" {
+            recordingInProgress.text = "recording"
             stopAudio.hidden = false
             print("recording on")
         }
@@ -80,7 +76,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
 
     @IBAction func stopAudio(sender: UIButton) {
-        recordingInProgress.hidden = true
+        recordingInProgress.text = "tap to record"
         
         audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()

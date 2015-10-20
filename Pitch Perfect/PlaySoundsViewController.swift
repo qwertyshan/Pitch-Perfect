@@ -25,14 +25,6 @@ class PlaySoundsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //var audioFilePath = NSBundle.mainBundle().pathForResource("movie_quote", ofType: "mp3")
-        //if (audioFilePath != nil) {
-        //    var audioFileUrl = NSURL.fileURLWithPath(audioFilePath!)
-        //    audioPlayer = AVAudioPlayer(contentsOfURL: audioFileUrl, error: nil)
-        //} else {
-        //    print("audio file not found")
-        //}
-        
         stopAudio.hidden = true
         
         audioPlayer = try! AVAudioPlayer(contentsOfURL:receivedAudio.filePathUrl)
@@ -40,13 +32,10 @@ class PlaySoundsViewController: UIViewController {
         
         audioEngine = AVAudioEngine()
         audioFile = try! AVAudioFile(forReading: receivedAudio.filePathUrl)
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func unhighlightButtons() {
@@ -57,6 +46,11 @@ class PlaySoundsViewController: UIViewController {
     @IBAction func playSlowAudio(sender: UIButton) {
        
         unhighlightButtons()
+        
+        audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
+        
         audioPlayer.rate = 0.5
         audioPlayer.play()
         slowAudio.highlighted = true
@@ -69,6 +63,11 @@ class PlaySoundsViewController: UIViewController {
     @IBAction func playFastAudio(sender: UIButton) {
  
         unhighlightButtons()
+        
+        audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
+        
         audioPlayer.rate = 3.0
         audioPlayer.play()
         fastAudio.highlighted = true
@@ -132,14 +131,5 @@ class PlaySoundsViewController: UIViewController {
     }
 
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
