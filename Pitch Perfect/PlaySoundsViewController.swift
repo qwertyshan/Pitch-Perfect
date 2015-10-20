@@ -126,6 +126,8 @@ class PlaySoundsViewController: UIViewController {
         if stopAudio.hidden == false {
             unhighlightButtons()
             audioPlayer.stop()
+            audioEngine.stop()
+            audioEngine.reset()
             stopAudio.hidden = true
         }
     }
