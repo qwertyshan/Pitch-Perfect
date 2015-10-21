@@ -33,54 +33,41 @@ class PlaySoundsViewController: UIViewController {
         audioEngine = AVAudioEngine()
         audioFile = try! AVAudioFile(forReading: receivedAudio.filePathUrl)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     func unhighlightButtons() {
         slowAudio.highlighted = false
         fastAudio.highlighted = false
+        chipmunkAudio.highlighted = false
+        darthvaderAudio.highlighted = false
+    }
+    
+    func resetState() {
+        unhighlightButtons()
+        audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
+        if (stopAudio.hidden == true) {
+            stopAudio.hidden = false
+        }
+    }
+    
+    func playAudioWithVariableRate(sender: UIButton, rate: Float) {
+        resetState()
+        audioPlayer.rate = rate
+        audioPlayer.play()
+        sender.highlighted = true
     }
 
     @IBAction func playSlowAudio(sender: UIButton) {
-       
-        unhighlightButtons()
-        
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
-        
-        audioPlayer.rate = 0.5
-        audioPlayer.play()
-        slowAudio.highlighted = true
-        if (stopAudio.hidden == true) {
-            stopAudio.hidden = false
-        }
-        
+        playAudioWithVariableRate(sender, rate: 0.5)
     }
     
     @IBAction func playFastAudio(sender: UIButton) {
- 
-        unhighlightButtons()
-        
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
-        
-        audioPlayer.rate = 3.0
-        audioPlayer.play()
-        fastAudio.highlighted = true
-        if (stopAudio.hidden == true) {
-            stopAudio.hidden = false
-        }
-        
+        playAudioWithVariableRate(sender, rate: 3.0)
     }
     
-    func playAudioWithVariablePitch(pitch: Float){
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
+    func playAudioWithVariablePitch(sender: UIButton, pitch: Float){
+        resetState()
         
         let audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
@@ -96,38 +83,20 @@ class PlaySoundsViewController: UIViewController {
         try! audioEngine.start()
         
         audioPlayerNode.play()
-        
+        sender.highlighted = true
     }
     
     @IBAction func playChipmunkAudio(sender: UIButton) {
-        playAudioWithVariablePitch(1600)
-        
-        unhighlightButtons()
-        chipmunkAudio.highlighted = true
-        
-        if (stopAudio.hidden == true) {
-            stopAudio.hidden = false
-        }
+        playAudioWithVariablePitch(sender, pitch: 1600)
     }
     
     @IBAction func playDarthvaderAudio(sender: UIButton) {
-        playAudioWithVariablePitch(-1000)
-        
-        unhighlightButtons()
-        darthvaderAudio.highlighted = true
-        
-        if (stopAudio.hidden == true) {
-            stopAudio.hidden = false
-        }
+        playAudioWithVariablePitch(sender, pitch: -1000)
     }
     
     @IBAction func stopAudio(sender: AnyObject) {
-        
         if stopAudio.hidden == false {
-            unhighlightButtons()
-            audioPlayer.stop()
-            audioEngine.stop()
-            audioEngine.reset()
+            resetState()
             stopAudio.hidden = true
         }
     }
