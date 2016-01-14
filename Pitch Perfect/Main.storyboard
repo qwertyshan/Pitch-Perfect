@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sk1-jr-j4e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sk1-jr-j4e">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -18,6 +18,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7g-rf-hEJ">
+                                <rect key="frame" x="110" y="391" width="100" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="ph0-Hm-BKh"/>
+                                </constraints>
+                                <state key="normal" image="Stop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopAudio:" destination="yqb-wq-ihs" eventType="touchUpInside" id="pKd-rW-A2H"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VII-eW-YQg">
+                                <rect key="frame" x="200" y="248" width="100" height="100"/>
+                                <state key="normal" image="DarthVader">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playDarthvaderAudio:" destination="yqb-wq-ihs" eventType="touchUpInside" id="917-lg-iWH"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Pb-XS-D7Z">
                                 <rect key="frame" x="20" y="248" width="100" height="100"/>
                                 <state key="normal" image="Chipmunk">
@@ -46,32 +67,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="playFastAudio:" destination="yqb-wq-ihs" eventType="touchUpInside" id="VWL-XF-XqY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VII-eW-YQg">
-                                <rect key="frame" x="200" y="248" width="100" height="100"/>
-                                <state key="normal" image="DarthVader">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="playDarthvaderAudio:" destination="yqb-wq-ihs" eventType="touchUpInside" id="917-lg-iWH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7g-rf-hEJ">
-                                <rect key="frame" x="110" y="391" width="100" height="54"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="ph0-Hm-BKh"/>
-                                </constraints>
-                                <state key="normal" image="Stop">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="stopAudio:" destination="yqb-wq-ihs" eventType="touchUpInside" id="pKd-rW-A2H"/>
+                                    <action selector="playFastAudio:" destination="yqb-wq-ihs" eventType="touchUpInside" id="Yw7-dq-hXN"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.40000000596046448" green="1" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="H3M-CO-WrR" firstAttribute="top" secondItem="bfb-Xw-m3f" secondAttribute="top" id="0Ls-6r-03v"/>
                             <constraint firstItem="bfb-Xw-m3f" firstAttribute="top" secondItem="X1g-Vy-HTa" secondAttribute="bottom" constant="40" id="438-kD-kP8"/>
@@ -105,7 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N51-ka-kUz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2051" y="227"/>
+            <point key="canvasLocation" x="1774" y="339"/>
         </scene>
         <!--Record-->
         <scene sceneID="ufC-wZ-h7g">
@@ -119,8 +119,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ua-nU-oo3">
-                                <rect key="frame" x="110" y="206" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ua-nU-oo3">
+                                <rect key="frame" x="110" y="190" width="100" height="100"/>
                                 <state key="normal" image="Microphone">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -136,13 +136,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="tap to record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWL-ru-s4z">
-                                <rect key="frame" x="121" y="326" width="79" height="21"/>
+                                <rect key="frame" x="90" y="298" width="140" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.25098040699958801" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="8Ua-nU-oo3" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="BO6-t0-vge"/>
                             <constraint firstItem="8Ua-nU-oo3" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="QDZ-KX-mpS"/>
@@ -163,13 +163,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1336" y="339"/>
+            <point key="canvasLocation" x="1344" y="339"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YN5-lc-pzy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sk1-jr-j4e" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GRf-dj-Ou3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -181,7 +182,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Asb-uU-V73" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="627" y="250"/>
+            <point key="canvasLocation" x="905" y="339"/>
         </scene>
     </scenes>
     <resources>

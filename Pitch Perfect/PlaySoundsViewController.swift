@@ -63,7 +63,7 @@ class PlaySoundsViewController: UIViewController {
     }
     
     @IBAction func playFastAudio(sender: UIButton) {
-        playAudioWithVariableRate(sender, rate: 3.0)
+        playAudioWithVariableRate(sender, rate: 2.0)
     }
     
     func playAudioWithVariablePitch(sender: UIButton, pitch: Float){
