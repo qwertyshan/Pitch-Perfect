@@ -4,9 +4,9 @@ Pitch Perfect was developed as an experimental iPhone app. It allows users to re
 
 **Developed in Xcode using Swift 2.0.**
 
-## Learning Goals
+## Experiment Goals
 
-* Add buttons, images, labels and create user interfaces for the app using the Storyboard
+* Create user interfaces for the app using the Storyboard, with buttons, colors, alignments, etc.
 * Leverage the Model View Controller (MVC) design principles; this includes writing custom model code, and using UIViewController, and UIView
 * Create Outlet and Action connections between the views and view controllers. Use Delegates in code.
 * Navigate between two scenes in the app using UINavigationController
