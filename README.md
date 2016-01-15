@@ -18,8 +18,8 @@ Pitch Perfect was developed as an experimental iPhone app. It allows users to re
 
 ## Functionality
 
-![Pitch Perfect 1](/doc/pp1.png)
-![Pitch Perfect 2](/doc/pp2.png)
-![Pitch Perfect 3](/doc/pp3.png)
-![Pitch Perfect 4](/doc/pp4.png)
+![Pitch Perfect 1](/doc/p1.png)
+![Pitch Perfect 2](/doc/p2.png)
+![Pitch Perfect 3](/doc/p3.png)
+![Pitch Perfect 4](/doc/p4.png)
 
