@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F138B811C644058007ADE95 /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F138B801C644058007ADE95 /* CoreDataStackManager.swift */; };
+		8F138B841C6440EC007ADE95 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8F138B821C6440EC007ADE95 /* Model.xcdatamodeld */; };
 		8F5DB0A31BAE866C00809343 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5DB0A21BAE866C00809343 /* AppDelegate.swift */; };
 		8F5DB0A51BAE866C00809343 /* RecordSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5DB0A41BAE866C00809343 /* RecordSoundsViewController.swift */; };
 		8F5DB0AA1BAE866C00809343 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F5DB0A91BAE866C00809343 /* Images.xcassets */; };
@@ -28,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F138B801C644058007ADE95 /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
+		8F138B831C6440EC007ADE95 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		8F5DB09D1BAE866C00809343 /* Pitch Perfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pitch Perfect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F5DB0A11BAE866C00809343 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F5DB0A21BAE866C00809343 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,10 +85,12 @@
 		8F5DB09F1BAE866C00809343 /* Pitch Perfect */ = {
 			isa = PBXGroup;
 			children = (
+				8F138B821C6440EC007ADE95 /* Model.xcdatamodeld */,
 				8F5DB0A21BAE866C00809343 /* AppDelegate.swift */,
 				8F5DB0A41BAE866C00809343 /* RecordSoundsViewController.swift */,
 				8FF1E1A81BB24E5D0042B26B /* Main.storyboard */,
 				8FF1E1A61BB24A330042B26B /* RecordedAudio.swift */,
+				8F138B801C644058007ADE95 /* CoreDataStackManager.swift */,
 				8FF1E19E1BB202270042B26B /* PlaySoundsViewController.swift */,
 				8F5DB0A91BAE866C00809343 /* Images.xcassets */,
 				8F5DB0AB1BAE866C00809343 /* LaunchScreen.xib */,
@@ -223,7 +229,9 @@
 				8FF1E1A71BB24A330042B26B /* RecordedAudio.swift in Sources */,
 				8F5DB0A51BAE866C00809343 /* RecordSoundsViewController.swift in Sources */,
 				8FF1E19F1BB202270042B26B /* PlaySoundsViewController.swift in Sources */,
+				8F138B811C644058007ADE95 /* CoreDataStackManager.swift in Sources */,
 				8F5DB0A31BAE866C00809343 /* AppDelegate.swift in Sources */,
+				8F138B841C6440EC007ADE95 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +444,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8F138B821C6440EC007ADE95 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8F138B831C6440EC007ADE95 /* Model.xcdatamodel */,
+			);
+			currentVersion = 8F138B831C6440EC007ADE95 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8F5DB0951BAE866C00809343 /* Project object */;
 }
